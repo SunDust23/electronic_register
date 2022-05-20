@@ -116,7 +116,8 @@ namespace electronic_register
                 "where t1.divisionId is null;";
 
             public const string SelectDivision =
-                "SELECT t1.id, t1.name, t1.shortName, t1.genetiveCase, t1.dativeCase, company.shortName as company, t2.name as subdivision " +
+                "SELECT t1.id as Код, t1.name as Название, t1.shortName as Краткое, t1.genetiveCase as Родительный," +
+                " t1.dativeCase as Дательный, t2.name as Подразделение, company.shortName as Предприятие " +
                 "FROM divisions as t1 inner join company on t1.companyId = company.id " +
                 "LEFT JOIN divisions AS t2 ON t1.divisionId = t2.id";
 
@@ -130,7 +131,9 @@ namespace electronic_register
                 "INNER JOIN block on floor.blockId = block.id ";
 
             public static string SelectPlacement =
-                "SELECT divisions.name as Division, placementtype.name as Type, blockNum, floorNum, roomNum, square FROM placements " +
+                "SELECT placements.id as Код, divisions.name as Подразделение, placementtype.name as Тип, " +
+                "blockNum as Корпус, floorNum as Этаж, roomNum as Комната, square as Площадь " +
+                "FROM placements " +
                 "inner join divisions on placements.divisionId = divisions.id " +
                 "inner join placementtype on placements.typeId = placementtype.id " +
                 "inner join room on placements.roomId = room.id " +

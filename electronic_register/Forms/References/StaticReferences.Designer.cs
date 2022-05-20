@@ -34,11 +34,11 @@
             this.ActionTypePage = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_selectedRow = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox_selectedRow = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.PlaceTypePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -72,6 +72,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 6);
             this.dataGridView1.Name = "dataGridView1";
@@ -122,6 +124,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление справочниками";
             // 
+            // textBox_selectedRow
+            // 
+            this.textBox_selectedRow.Location = new System.Drawing.Point(27, 296);
+            this.textBox_selectedRow.Name = "textBox_selectedRow";
+            this.textBox_selectedRow.ReadOnly = true;
+            this.textBox_selectedRow.Size = new System.Drawing.Size(121, 22);
+            this.textBox_selectedRow.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 268);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Выбранная срока:";
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(27, 147);
@@ -152,23 +171,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox_selectedRow
-            // 
-            this.textBox_selectedRow.Location = new System.Drawing.Point(27, 296);
-            this.textBox_selectedRow.Name = "textBox_selectedRow";
-            this.textBox_selectedRow.ReadOnly = true;
-            this.textBox_selectedRow.Size = new System.Drawing.Size(121, 22);
-            this.textBox_selectedRow.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 268);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Выбранная срока:";
-            // 
             // StaticReferences
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +179,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Name = "StaticReferences";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Справочники";
             this.tabControl1.ResumeLayout(false);
             this.PlaceTypePage.ResumeLayout(false);

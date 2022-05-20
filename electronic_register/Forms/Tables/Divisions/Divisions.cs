@@ -20,12 +20,14 @@ namespace electronic_register
 
         public int updatedId;
         public string actionName;
+        //public DataGridViewRow row;
 
         public Divisions()
         {
             InitializeComponent();
 
             updateTables();
+            dataGridView1.Columns[0].Visible = false;
         }
 
         public void updateTables()
@@ -33,6 +35,7 @@ namespace electronic_register
             fillForms.FillTable(Scripts.Select.SelectDivision, dataGridView1);
             fillForms.FillTable(Scripts.Select.SelectDivisionHierarchy, dataGridView_levels);
             fillHierarchy(Scripts.Select.SelectDivisions, treeView1);
+            //((Main)this.Tag).getChanges();
         }
 
         private void fillHierarchy(string script, System.Windows.Forms.TreeView treeView)
@@ -76,7 +79,6 @@ namespace electronic_register
 
         private void button1_Click(object sender, EventArgs e)
         {
-            actionName = "Добавление";
             DivisionsAdd = new AddDivision()
             {
                 Tag = this
@@ -86,8 +88,8 @@ namespace electronic_register
 
         private void button2_Click(object sender, EventArgs e)
         {
-            actionName = "Редактирование";
-            DivisionsAdd = new AddDivision()
+            updatedId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DivisionsAdd = new AddDivision(updatedId)
             {
                 Tag = this
             };
@@ -100,6 +102,12 @@ namespace electronic_register
                 Scripts.Delete.DeleteDivision,
                 Scripts.Select.SelectDivision,
                 dataGridView1);
+            updateTables();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox_selectedId.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
         }
 
         //protected void CreateTreeView(TreeNode treeNode, int parentID, DataTable mytab)
@@ -126,26 +134,5 @@ namespace electronic_register
 
         //}
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    
-        //}
-
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    DivisionsAdd = new AddDivision
-        //    {
-        //        Tag = this
-        //    };
-        //    DivisionsAdd.Show();
-        //}
-
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    changeTables.deleteFromTable(
-        //        Scripts.Delete.DeleteDivision,
-        //        Scripts.Select.SelectDivision,
-        //        dataGridView1);
-        //}
     }
 }

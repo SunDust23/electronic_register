@@ -83,6 +83,7 @@
             this.comboBox_room.Name = "comboBox_room";
             this.comboBox_room.Size = new System.Drawing.Size(162, 24);
             this.comboBox_room.TabIndex = 14;
+            this.comboBox_room.SelectedIndexChanged += new System.EventHandler(this.comboBox_room_SelectedIndexChanged);
             // 
             // comboBox_floor
             // 
@@ -91,6 +92,7 @@
             this.comboBox_floor.Name = "comboBox_floor";
             this.comboBox_floor.Size = new System.Drawing.Size(162, 24);
             this.comboBox_floor.TabIndex = 13;
+            this.comboBox_floor.SelectedIndexChanged += new System.EventHandler(this.comboBox_floor_SelectedIndexChanged);
             // 
             // comboBox_type
             // 
@@ -134,6 +136,7 @@
             this.comboBox_block.Name = "comboBox_block";
             this.comboBox_block.Size = new System.Drawing.Size(162, 24);
             this.comboBox_block.TabIndex = 8;
+            this.comboBox_block.SelectedIndexChanged += new System.EventHandler(this.comboBox_block_SelectedIndexChanged);
             // 
             // label4
             // 

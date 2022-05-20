@@ -32,21 +32,19 @@
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьСправочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.подразделенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьПодразделениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.иерархияПодразделенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помещенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьПомещениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокПомещенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.приказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьПриказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокПриказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.DivisionsCount = new System.Windows.Forms.Label();
+            this.PlacementsCount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.SquareCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -88,18 +86,10 @@
             // подразделенияToolStripMenuItem
             // 
             this.подразделенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьПодразделениеToolStripMenuItem,
             this.иерархияПодразделенийToolStripMenuItem});
             this.подразделенияToolStripMenuItem.Name = "подразделенияToolStripMenuItem";
             this.подразделенияToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
             this.подразделенияToolStripMenuItem.Text = "Подразделения";
-            // 
-            // добавитьПодразделениеToolStripMenuItem
-            // 
-            this.добавитьПодразделениеToolStripMenuItem.Name = "добавитьПодразделениеToolStripMenuItem";
-            this.добавитьПодразделениеToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
-            this.добавитьПодразделениеToolStripMenuItem.Text = "Добавить подразделение";
-            this.добавитьПодразделениеToolStripMenuItem.Click += new System.EventHandler(this.добавитьПодразделениеToolStripMenuItem_Click);
             // 
             // иерархияПодразделенийToolStripMenuItem
             // 
@@ -111,23 +101,15 @@
             // помещенияToolStripMenuItem
             // 
             this.помещенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьПомещениеToolStripMenuItem,
             this.списокПомещенийToolStripMenuItem});
             this.помещенияToolStripMenuItem.Name = "помещенияToolStripMenuItem";
             this.помещенияToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.помещенияToolStripMenuItem.Text = "Помещения";
             // 
-            // добавитьПомещениеToolStripMenuItem
-            // 
-            this.добавитьПомещениеToolStripMenuItem.Name = "добавитьПомещениеToolStripMenuItem";
-            this.добавитьПомещениеToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.добавитьПомещениеToolStripMenuItem.Text = "Добавить помещение";
-            this.добавитьПомещениеToolStripMenuItem.Click += new System.EventHandler(this.добавитьПомещениеToolStripMenuItem_Click);
-            // 
             // списокПомещенийToolStripMenuItem
             // 
             this.списокПомещенийToolStripMenuItem.Name = "списокПомещенийToolStripMenuItem";
-            this.списокПомещенийToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
+            this.списокПомещенийToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.списокПомещенийToolStripMenuItem.Text = "Список помещений";
             this.списокПомещенийToolStripMenuItem.Click += new System.EventHandler(this.списокПомещенийToolStripMenuItem_Click);
             // 
@@ -163,11 +145,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.DivisionsCount);
+            this.groupBox1.Controls.Add(this.PlacementsCount);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.SquareCount);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(30, 52);
@@ -177,28 +159,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Предприятие";
             // 
-            // label8
+            // DivisionsCount
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(224, 287);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 16);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "*кол-во*";
+            this.DivisionsCount.AutoSize = true;
+            this.DivisionsCount.Location = new System.Drawing.Point(216, 285);
+            this.DivisionsCount.Name = "DivisionsCount";
+            this.DivisionsCount.Size = new System.Drawing.Size(60, 16);
+            this.DivisionsCount.TabIndex = 10;
+            this.DivisionsCount.Text = "*кол-во*";
             // 
-            // label7
+            // PlacementsCount
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(224, 314);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 16);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "*кол-во*";
+            this.PlacementsCount.AutoSize = true;
+            this.PlacementsCount.Location = new System.Drawing.Point(216, 312);
+            this.PlacementsCount.Name = "PlacementsCount";
+            this.PlacementsCount.Size = new System.Drawing.Size(60, 16);
+            this.PlacementsCount.TabIndex = 9;
+            this.PlacementsCount.Text = "*кол-во*";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 341);
+            this.label6.Location = new System.Drawing.Point(10, 339);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 16);
             this.label6.TabIndex = 8;
@@ -207,25 +189,25 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 314);
+            this.label5.Location = new System.Drawing.Point(10, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "Помещений:";
             // 
-            // label4
+            // SquareCount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(224, 341);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "*кол-во*";
+            this.SquareCount.AutoSize = true;
+            this.SquareCount.Location = new System.Drawing.Point(216, 339);
+            this.SquareCount.Name = "SquareCount";
+            this.SquareCount.Size = new System.Drawing.Size(60, 16);
+            this.SquareCount.TabIndex = 6;
+            this.SquareCount.Text = "*кол-во*";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 287);
+            this.label2.Location = new System.Drawing.Point(10, 285);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 16);
             this.label2.TabIndex = 5;
@@ -260,6 +242,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Электронный реестр помещений";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -278,18 +261,16 @@
         private System.Windows.Forms.ToolStripMenuItem помещенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem приказыToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label SquareCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label DivisionsCount;
+        private System.Windows.Forms.Label PlacementsCount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem добавитьПодразделениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem иерархияПодразделенийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавитьПомещениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокПомещенийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьПриказToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокПриказовToolStripMenuItem;

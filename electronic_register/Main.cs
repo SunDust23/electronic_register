@@ -39,6 +39,60 @@ namespace electronic_register
             InitializeComponent();
 
             changeCompany();
+            getChanges();
+        }
+
+        public void getChanges()
+        {
+            countDivisions();
+            countPlacements();
+            countSquare();
+        }
+
+        private void countPlacements() 
+        {
+            string query = "SELECT count(id) FROM Placements";
+
+            MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+
+            mySql_dataAdapter.Fill(table);
+            mySql_dataAdapter.Dispose();
+
+            foreach (DataRow row in table.Rows)
+            {
+                PlacementsCount.Text = Convert.ToString(row["count(id)"]);
+            }
+        }
+        private void countDivisions()
+        {
+            string query = "SELECT count(id) FROM Divisions";
+
+            MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+
+            mySql_dataAdapter.Fill(table);
+            mySql_dataAdapter.Dispose();
+
+            foreach (DataRow row in table.Rows)
+            {
+                DivisionsCount.Text = Convert.ToString(row["count(id)"]);
+            }
+        }
+        private void countSquare()
+        {
+            string query = "SELECT sum(square) FROM Placements";
+
+            MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+
+            mySql_dataAdapter.Fill(table);
+            mySql_dataAdapter.Dispose();
+
+            foreach (DataRow row in table.Rows)
+            {
+                SquareCount.Text = Convert.ToString(row["sum(square)"]) + " м^2"; 
+            }
         }
 
         private void changeCompany() //string query) System.Windows.Forms.DataGrid form
@@ -51,43 +105,13 @@ namespace electronic_register
             mySql_dataAdapter.Fill(table);
             mySql_dataAdapter.Dispose();
 
-           // MySqlCommand command = new MySqlCommand(query, conn);
-            //command.ExecuteNonQuery();
             foreach (DataRow row in table.Rows)
             {
                 groupBox1.Text = Convert.ToString(row["Name"]);
             }
-            
-            // выполняем запрос
-            // label3.Text = 
 
         }
-        //public void fillComboBox(string script, string dis, string val, System.Windows.Forms.ComboBox comboBox1)
-        //{
 
-        //    MySqlConnection conn = DBUtils.GetDBConnection();
-        //    conn.Open();
-
-        //    MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(script, conn);
-        //    DataTable table = new DataTable();
-
-        //    mySql_dataAdapter.Fill(table);
-
-        //    comboBox1.DataSource = table;
-        //    comboBox1.DisplayMember = dis;
-        //    comboBox1.ValueMember = val;
-
-        //    conn.Close();
-        //}
-
-        private void добавитьПодразделениеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DivisionsAdd = new AddDivision
-            {
-                Tag = this
-            };
-            DivisionsAdd.Show();
-        }
 
         private void иерархияПодразделенийToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,15 +120,6 @@ namespace electronic_register
                 Tag = this
             };
             Divisions.Show();
-        }
-
-        private void добавитьПомещениеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PlacementsAdd = new AddPlacement
-            {
-                Tag = this
-            };
-            PlacementsAdd.Show();
         }
 
         private void списокПомещенийToolStripMenuItem_Click(object sender, EventArgs e)
