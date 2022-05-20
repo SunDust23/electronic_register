@@ -16,14 +16,20 @@ namespace electronic_register
         MySqlConnection conn = DBUtils.GetDBConnection();
         public AddDivision DivisionsAdd;
         FillForms fillForms = new FillForms();
+        ChangeTables changeTables = new ChangeTables();
         public Divisions()
         {
             InitializeComponent();
 
-            fillForms.FillTable(Scripts.Select.SelectDivision, dataGridView1);
-            fillHierarchy(Scripts.Select.SelectDivisions, treeView1);
+            updateTables();
         }
 
+        public void updateTables()
+        {
+            fillForms.FillTable(Scripts.Select.SelectDivision, dataGridView1);
+            fillForms.FillTable(Scripts.Select.SelectDivisionHierarchy, dataGridView_levels);
+            fillHierarchy(Scripts.Select.SelectDivisions, treeView1);
+        }
 
         private void fillHierarchy(string script, System.Windows.Forms.TreeView treeView)
         {
@@ -37,7 +43,7 @@ namespace electronic_register
             treeView.BeginUpdate();
             treeView.Nodes.Clear();
 
-            int parentId = 1;
+            //int parentId = 1;
           //  CreateTreeView(treeView, 0, dtTree);
 
             foreach (DataRow dr in dtTree.Rows)
@@ -45,23 +51,49 @@ namespace electronic_register
                 //TreeNode childNode = new TreeNode(dr["name"].ToString());
 
                 //treeView.SelectedNode.Nodes.Add(childNode);
-                if (Convert.ToInt32(dr["divisionId"]) == parentId)
-                {
+                //if (Convert.ToInt32(dr["divisionId"]) == parentId)
+                //{
                 String key = dr["id"].ToString();
                 String text = dr["name"].ToString();
 
                 treeView.Nodes.Add(key, text);
 
-                    parentId = Convert.ToInt32(dr["id"]);
+                   // parentId = Convert.ToInt32(dr["id"]);
                 //if (Convert.ToInt32(dr["divisionId"]) == Convert.ToInt32(dr["id"]))
                 //   // CreateTreeView(treeView, Convert.ToInt32(dr["id"]), dtTree);
-                }
+                //}
             }
             treeView.Nodes[0].Expand();
             treeView.Select();
             treeView.EndUpdate();
 
             conn.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DivisionsAdd = new AddDivision
+            {
+                Tag = this
+            };
+            DivisionsAdd.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DivisionsAdd = new AddDivision
+            {
+                Tag = this
+            };
+            DivisionsAdd.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            changeTables.deleteFromTable(
+                Scripts.Delete.DeleteDivision,
+                Scripts.Select.SelectDivision,
+                dataGridView1);
         }
 
         //protected void CreateTreeView(TreeNode treeNode, int parentID, DataTable mytab)
@@ -88,27 +120,26 @@ namespace electronic_register
 
         //}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DivisionsAdd = new AddDivision
-            {
-                Tag = this
-            };
-            DivisionsAdd.Show();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    
+        //}
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DivisionsAdd = new AddDivision
-            {
-                Tag = this
-            };
-            DivisionsAdd.Show();
-        }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    DivisionsAdd = new AddDivision
+        //    {
+        //        Tag = this
+        //    };
+        //    DivisionsAdd.Show();
+        //}
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    changeTables.deleteFromTable(
+        //        Scripts.Delete.DeleteDivision,
+        //        Scripts.Select.SelectDivision,
+        //        dataGridView1);
+        //}
     }
 }

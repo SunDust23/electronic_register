@@ -92,9 +92,9 @@ namespace electronic_register
             //public static string SelectOrder =
             //   "SELECT * FROM Order;";
             public static string SelectActionType =
-               "SELECT * FROM ActionType;";
+               "SELECT id as Код, name as Название FROM ActionType;";
             public static string SelectPlacementType =
-               "SELECT * FROM PlacementType;";
+               "SELECT id as Код, name as Название FROM PlacementType;";
             public static string SelectPlacementInOrder =
                "SELECT * FROM PlacementInOrder;";
             public static string SelectBlock =
@@ -113,8 +113,9 @@ namespace electronic_register
                 "where t1.divisionId is null;";
 
             public const string SelectDivision =
-                "SELECT t1.name, t1.shortName, t1.genetiveCase, t1.dativeCase, " +
-                "company.shortName AS company, t2.name AS subdivision " +
+                "SELECT t1.id as Код, t1.name as Название, t1.shortName as Краткое, " +
+                "t1.genetiveCase as Родительный, t1.dativeCase as Дательный, " +
+                "company.shortName AS Предприятие, t2.name AS Подразделение " +
                 "FROM divisions as t1 inner join company ON t1.companyId = company.id " +
                 "LEFT JOIN divisions AS t2 ON t2.divisionId = t1.id;";
 

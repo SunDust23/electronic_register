@@ -59,6 +59,8 @@ namespace electronic_register
             // выполняем запрос
             command.ExecuteNonQuery();
 
+            ((Divisions)this.Tag).updateTables();
+
             this.Close();
             conn.Close();
         }

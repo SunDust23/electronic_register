@@ -16,18 +16,21 @@ namespace electronic_register
         MySqlConnection conn = DBUtils.GetDBConnection();
         string query;
 
-        public AddRef(System.Windows.Forms.TabPage selectedTab, string actionName)
+        public AddRef(System.Windows.Forms.TabPage selectedTab, string actionName, string updatedName)
         { 
             InitializeComponent();
             conn.Open();
             
             labelAction.Text = actionName;
             groupBox1.Text = Convert.ToString(selectedTab.Text);
+
+            textBox_name.Text = updatedName; 
+
             chooseQuery(selectedTab, actionName);
         }
 
         private void chooseQuery(System.Windows.Forms.TabPage selectedTab, string actionName)
-        { 
+        {
             switch (selectedTab.Text)
             {
                 case "Тип помещения":
@@ -38,7 +41,6 @@ namespace electronic_register
                     if (actionName == "Редактирование")
                     {
                         query = Scripts.Update.UpdatePlacementType;
-                        //command.Parameters.AddWithValue("@id", id);
                     }
                     break;
 
@@ -61,12 +63,18 @@ namespace electronic_register
             string name = textBox_name.Text;
             MySqlCommand command = new MySqlCommand(query, conn);
 
+            int id = ((StaticReferences)this.Tag).updatedId;
+
+            command.Parameters.AddWithValue("@id", id);
             command.Parameters.AddWithValue("@name", name);
 
             command.ExecuteNonQuery();
 
-            this.Close();
+            ((StaticReferences)this.Tag).updateTables();
             conn.Close();
+            
+
+            this.Close();
         }
     }
 }

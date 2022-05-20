@@ -13,13 +13,15 @@ namespace electronic_register
         FillForms fillForms = new FillForms();
 
 
-        public void InsertIntoTable(string InsertQuery, string SelectQuery, System.Windows.Forms.DataGridView dataGridView)
-        {
-        }
+        //public void InsertIntoTable(string InsertQuery, string SelectQuery, System.Windows.Forms.DataGridView dataGridView)
+        //{
 
-        public void UpdateTable(string UpdateQuery, string SelectQuery, System.Windows.Forms.DataGridView dataGridView)
-        {
-        }
+        //}
+
+        //public void UpdateTable(string UpdateQuery, string SelectQuery, System.Windows.Forms.DataGridView dataGridView)
+        //{
+        //}
+
 
         public void deleteFromTable(string DeleteQuery, string SelectQuery, System.Windows.Forms.DataGridView dataGridView)
         {
