@@ -36,27 +36,41 @@ namespace electronic_register
             int companyId = 1;
 
             MySqlCommand command;
+
             if (comboBox_division.SelectedItem == null)
             {
-                 command = new MySqlCommand(Scripts.Insert.InsertMainDivision, conn);
+                if (((Divisions)this.Tag).actionName == "Добавление")
+                {
+                    command = new MySqlCommand(Scripts.Insert.InsertMainDivision, conn);
+                }
+                if (((Divisions)this.Tag).actionName == "Редактирование")
+                {
+                    command = new MySqlCommand(Scripts.Update.UpdateMainDivision, conn);
+                }
             }
             else
             {
-                 command = new MySqlCommand(Scripts.Insert.InsertDivision, conn);
-                 command.Parameters.AddWithValue("@divisionId", divisionId);
+                if (((Divisions)this.Tag).actionName == "Добавление")
+                {
+                    command = new MySqlCommand(Scripts.Insert.InsertDivision, conn);
+                }
+                if (((Divisions)this.Tag).actionName == "Редактирование")
+                {
+                    command = new MySqlCommand(Scripts.Update.UpdateDivision, conn);
+                }
+                command.Parameters.AddWithValue("@divisionId", divisionId);
             }
-           
-            
 
+            int id = ((Divisions)this.Tag).updatedId;
 
+            command.Parameters.AddWithValue("@id", id);
             command.Parameters.AddWithValue("@name", name);
             command.Parameters.AddWithValue("@shortName", shortName);
             command.Parameters.AddWithValue("@genetiveCase", genetiveCase);
             command.Parameters.AddWithValue("@dativeCase", dativeCase);
-            
+
             command.Parameters.AddWithValue("@companyId", companyId);
 
-            // выполняем запрос
             command.ExecuteNonQuery();
 
             ((Divisions)this.Tag).updateTables();

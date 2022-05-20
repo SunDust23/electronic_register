@@ -40,6 +40,9 @@ namespace electronic_register
                 "UPDATE Company SET name = @name, shortName = @shortName WHERE id = @id";
             public static string UpdateDivision =
                 "UPDATE Divisions SET name = @name, shortName = @shortName, genetiveCase = @genetiveCase, dativeCase = @dativeCase, divisionId = @divisionId, companyId = @companyId WHERE id = @id";
+            public static string UpdateMainDivision =
+               "UPDATE Divisions SET name = @name, shortName = @shortName, genetiveCase = @genetiveCase, dativeCase = @dativeCase, companyId = @companyId WHERE id = @id";
+
             public static string UpdatePlacement =
                 "UPDATE Placements SET divisionId = @divisionId, typeId = @typeId, roomID = @roomID, square = @square WHERE id = @id";
             public static string UpdateOrder =
@@ -113,11 +116,9 @@ namespace electronic_register
                 "where t1.divisionId is null;";
 
             public const string SelectDivision =
-                "SELECT t1.id as Код, t1.name as Название, t1.shortName as Краткое, " +
-                "t1.genetiveCase as Родительный, t1.dativeCase as Дательный, " +
-                "company.shortName AS Предприятие, t2.name AS Подразделение " +
-                "FROM divisions as t1 inner join company ON t1.companyId = company.id " +
-                "LEFT JOIN divisions AS t2 ON t2.divisionId = t1.id;";
+                "SELECT t1.id, t1.name, t1.shortName, t1.genetiveCase, t1.dativeCase, company.shortName as company, t2.name as subdivision " +
+                "FROM divisions as t1 inner join company on t1.companyId = company.id " +
+                "LEFT JOIN divisions AS t2 ON t1.divisionId = t2.id";
 
             public static string SelectRoomByfloor =
                 "SELECT blockNum, floorNum, roomNum FROM room " +

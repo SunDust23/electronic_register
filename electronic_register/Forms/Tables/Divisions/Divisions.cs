@@ -17,6 +17,10 @@ namespace electronic_register
         public AddDivision DivisionsAdd;
         FillForms fillForms = new FillForms();
         ChangeTables changeTables = new ChangeTables();
+
+        public int updatedId;
+        public string actionName;
+
         public Divisions()
         {
             InitializeComponent();
@@ -72,7 +76,8 @@ namespace electronic_register
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DivisionsAdd = new AddDivision
+            actionName = "Добавление";
+            DivisionsAdd = new AddDivision()
             {
                 Tag = this
             };
@@ -81,7 +86,8 @@ namespace electronic_register
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DivisionsAdd = new AddDivision
+            actionName = "Редактирование";
+            DivisionsAdd = new AddDivision()
             {
                 Tag = this
             };
