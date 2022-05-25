@@ -20,7 +20,7 @@ namespace electronic_register
             public static string InsertPlacement =
                 "INSERT INTO Placements (divisionId, typeId, roomID, square) VALUES (@divisionId, @typeId, @roomID, @square)";
             public static string InsertOrder =
-                "INSERT INTO Order (orderNum, typeId, date, validity, divisionId) VALUES (@orderNum, @typeId, @date, @validity, @divisionId)";
+                "INSERT INTO Orders (orderNum, typeId, date, validity, divisionId) VALUES (@orderNum, @typeId, @date, @validity, @divisionId)";
             public static string InsertActionType =
                 "INSERT INTO ActionType (name) VALUES (@name)";
             public static string InsertPlacementType =
@@ -46,7 +46,7 @@ namespace electronic_register
             public static string UpdatePlacement =
                 "UPDATE Placements SET divisionId = @divisionId, typeId = @typeId, roomID = @roomID, square = @square WHERE id = @id";
             public static string UpdateOrder =
-                "UPDATE Order SET orderNum = @orderNum, typeId = @typeId, date = @date, validity = @validity, divisionId = @divisionId WHERE id = @id";
+                "UPDATE Orders SET orderNum = @orderNum, typeId = @typeId, date = @date, validity = @validity, divisionId = @divisionId WHERE id = @id";
             public static string UpdateActionType =
                 "UPDATE ActionType SET name = @name WHERE id = @id";
             public static string UpdatePlacementType =
@@ -69,7 +69,7 @@ namespace electronic_register
             public static string DeletePlacement =
                 "DELETE FROM Placements WHERE id = @id";
             public static string DeleteOrder =
-                "DELETE FROM Order WHERE id = @id";
+                "DELETE FROM Orders WHERE id = @id";
             public static string DeleteActionType =
                 "DELETE FROM ActionType WHERE id = @id";
             public static string DeletePlacementType =
@@ -95,7 +95,7 @@ namespace electronic_register
             //public static string SelectOrder =
             //   "SELECT * FROM Order;";
             public static string SelectActionType =
-               "SELECT id as Код, name as Название FROM ActionType;";
+               "SELECT id, name FROM ActionType;";
             public static string SelectPlacementType =
                "SELECT id as Код, name as Название FROM PlacementType;";
             public static string SelectPlacementInOrder =
@@ -105,7 +105,7 @@ namespace electronic_register
             public static string SelectFloor =
                "SELECT * FROM Floor;";
             public static string SelectRoom =
-               "SELECT * FROM Room;";
+               "SELECT placements.id, roomNum FROM placements inner join room on roomid = room.id";
 
             public static string SelectDivisionHierarchy =
                 "SELECT t1.name AS lev1, t2.name as lev2, t3.name as lev3, t4.name as lev4 " +

@@ -90,6 +90,7 @@
     <Compile Include="Forms\Tables\Divisions\Divisions.Designer.cs">
       <DependentUpon>Divisions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tables\Orders\Placement.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

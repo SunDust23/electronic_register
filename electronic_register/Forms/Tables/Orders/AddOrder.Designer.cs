@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_validity = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_date = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_division = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_orderNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox_addPlacement = new System.Windows.Forms.ListBox();
             this.listBox_AllPlacements = new System.Windows.Forms.ListBox();
             this.addPlacementbutton = new System.Windows.Forms.Button();
             this.delPlacementButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox_action = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.comboBox_action);
+            this.groupBox1.Controls.Add(this.dateTimePicker_validity);
+            this.groupBox1.Controls.Add(this.dateTimePicker_date);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBox_division);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox_orderNum);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(22, 26);
             this.groupBox1.Name = "groupBox1";
@@ -69,19 +69,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Приказ";
             // 
-            // dateTimePicker2
+            // dateTimePicker_validity
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(166, 161);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(162, 22);
-            this.dateTimePicker2.TabIndex = 12;
+            this.dateTimePicker_validity.Location = new System.Drawing.Point(166, 161);
+            this.dateTimePicker_validity.Name = "dateTimePicker_validity";
+            this.dateTimePicker_validity.Size = new System.Drawing.Size(162, 22);
+            this.dateTimePicker_validity.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // dateTimePicker_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(166, 123);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 22);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker_date.Location = new System.Drawing.Point(166, 123);
+            this.dateTimePicker_date.Name = "dateTimePicker_date";
+            this.dateTimePicker_date.Size = new System.Drawing.Size(162, 22);
+            this.dateTimePicker_date.TabIndex = 11;
             // 
             // button1
             // 
@@ -102,13 +102,13 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Подразделение";
             // 
-            // comboBox1
+            // comboBox_division
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(166, 202);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 24);
-            this.comboBox1.TabIndex = 8;
+            this.comboBox_division.FormattingEnabled = true;
+            this.comboBox_division.Location = new System.Drawing.Point(166, 202);
+            this.comboBox_division.Name = "comboBox_division";
+            this.comboBox_division.Size = new System.Drawing.Size(162, 24);
+            this.comboBox_division.TabIndex = 8;
             // 
             // label4
             // 
@@ -128,33 +128,26 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Дата подписания";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(166, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 22);
-            this.textBox2.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 91);
+            this.label2.Location = new System.Drawing.Point(6, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Номер приказа";
             // 
-            // textBox1
+            // textBox_orderNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(166, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 22);
-            this.textBox1.TabIndex = 0;
+            this.textBox_orderNum.Location = new System.Drawing.Point(166, 47);
+            this.textBox_orderNum.Name = "textBox_orderNum";
+            this.textBox_orderNum.Size = new System.Drawing.Size(162, 22);
+            this.textBox_orderNum.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 53);
+            this.label1.Location = new System.Drawing.Point(6, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 1;
@@ -211,6 +204,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Помещения";
             // 
+            // comboBox_action
+            // 
+            this.comboBox_action.FormattingEnabled = true;
+            this.comboBox_action.Location = new System.Drawing.Point(166, 83);
+            this.comboBox_action.Name = "comboBox_action";
+            this.comboBox_action.Size = new System.Drawing.Size(162, 24);
+            this.comboBox_action.TabIndex = 13;
+            // 
             // AddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,21 +231,21 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_validity;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_date;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_division;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_orderNum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox_addPlacement;
         private System.Windows.Forms.ListBox listBox_AllPlacements;
         private System.Windows.Forms.Button addPlacementbutton;
         private System.Windows.Forms.Button delPlacementButton;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox_action;
     }
 }

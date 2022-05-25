@@ -123,7 +123,6 @@ namespace electronic_register
 
             string query = ChooseQuery();
 
-           
             MySqlCommand command = new MySqlCommand(query, conn);
             if (comboBox_division.SelectedItem != null)
             {

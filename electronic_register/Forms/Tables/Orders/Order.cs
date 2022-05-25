@@ -18,13 +18,15 @@ namespace electronic_register
         public Order()
         {
             InitializeComponent();
-            updateTable();
+            updateTables();
             dataGridView1.Columns[0].Visible = false;
         }
 
-        public void updateTable()
+        public void updateTables()
         {
             fillForms.FillTable(Scripts.Select.SelectOrders, dataGridView1);
+            checkedListBox1.Items.Clear();
+            listView1.Items.Clear();
             fillForms.FillListBox(Scripts.Select.SelectOrders, checkedListBox1);
             fillForms.FillListView(Scripts.Select.SelectOrders, listView1);
         }
@@ -41,7 +43,7 @@ namespace electronic_register
         private void button2_Click(object sender, EventArgs e)
         {
             updatedId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            AddOrder = new AddOrder()
+            AddOrder = new AddOrder(updatedId)
             {
                 Tag = this
             };
@@ -54,7 +56,7 @@ namespace electronic_register
                Scripts.Delete.DeleteOrder,
                Scripts.Select.SelectOrders,
                dataGridView1);
-            updateTable();
+            updateTables();
         }
     }
 }
