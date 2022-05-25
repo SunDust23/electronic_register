@@ -36,7 +36,6 @@
             this.помещенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокПомещенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.приказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьПриказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокПриказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -116,18 +115,10 @@
             // приказыToolStripMenuItem
             // 
             this.приказыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьПриказToolStripMenuItem,
             this.списокПриказовToolStripMenuItem});
             this.приказыToolStripMenuItem.Name = "приказыToolStripMenuItem";
             this.приказыToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.приказыToolStripMenuItem.Text = "Приказы";
-            // 
-            // создатьПриказToolStripMenuItem
-            // 
-            this.создатьПриказToolStripMenuItem.Name = "создатьПриказToolStripMenuItem";
-            this.создатьПриказToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.создатьПриказToolStripMenuItem.Text = "Создать приказ";
-            this.создатьПриказToolStripMenuItem.Click += new System.EventHandler(this.создатьПриказToolStripMenuItem_Click);
             // 
             // списокПриказовToolStripMenuItem
             // 
@@ -221,6 +212,7 @@
             this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "*Назначение*";
+            this.label1.Visible = false;
             // 
             // pictureBox1
             // 
@@ -272,7 +264,6 @@
         private System.Windows.Forms.ToolStripMenuItem иерархияПодразделенийToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокПомещенийToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьПриказToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокПриказовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьСправочникиToolStripMenuItem;

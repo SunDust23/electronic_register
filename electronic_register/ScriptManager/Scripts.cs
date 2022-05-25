@@ -141,9 +141,13 @@ namespace electronic_register
                 "inner join block on floor.blockId = block.id";
 
             public static string SelectOrders =
-                "SELECT OrderNum, actionType.name, divisions.name, date, validity FROM orders " +
-                "INNER JOIN actionType ON orders.typeId = actionType.id " +
-                "INNER JOIN divisions ON orders.divisionId = divisions.id";
+                "SELECT orders.id, orderNum AS Номер, date AS Дата_подписания, validity AS Срок_действия, " +
+                "actiontype.name AS Действие, divisions.dativeCase AS Подразделение, " +
+                "GROUP_CONCAT(placementId SEPARATOR ', ') AS Помещения " +
+                "FROM orders INNER JOIN actionType ON orders.typeId = actionType.id " +
+                "INNER JOIN divisions ON orders.divisionId = divisions.id " +
+                "JOIN placementsinorder ON placementsinorder.orderId = orders.id " +
+                "GROUP BY orderNum;";
 
             public static string SelectPlacementsInOrder =
                 "SELECT * FROM placementsinorder " +
