@@ -30,5 +30,59 @@ namespace electronic_register
             conn.Close();
         }
 
+        public void FillListView(string script, System.Windows.Forms.ListView listView)
+        {
+            conn.Open();
+            MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(script, conn);
+            DataTable table = new DataTable();
+
+            mySql_dataAdapter.Fill(table);
+
+            string orderNum, orderBody;
+            
+            foreach (DataRow row in table.Rows)
+            {
+
+                orderNum = "Приказ №" + row[1].ToString() + ": ";
+                orderBody = orderNum + row[4].ToString()
+                    + " " + row[5].ToString() + " помещения: "
+                    + row[6].ToString(); 
+
+                listView.Items.Add(orderBody);
+                
+            }
+
+            conn.Close();
+        }
+
+        public void FillListBox(string script, System.Windows.Forms.ListBox listBox)
+        {
+            conn.Open();
+            MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(script, conn);
+            DataTable table = new DataTable();
+
+            mySql_dataAdapter.Fill(table);
+
+            string order;
+
+
+            foreach (DataRow row in table.Rows)
+            {
+                string date = row[2].ToString();
+                date = System.DateTime.Parse(date).ToShortDateString();
+                string validation = row[3].ToString();
+                validation = System.DateTime.Parse(date).ToShortDateString();
+
+                order = "Приказ №" + row[1].ToString() + ": от " + date
+                    + ", срок действия: до " + validation; 
+                    //+ " " + row[4].ToString() 
+                    //+ " " + row[5].ToString() + " следующие помещения: " 
+                    //+ row[6].ToString();
+                listBox.Items.Add(order);
+            }
+
+            conn.Close();
+        }
+
     }
 }

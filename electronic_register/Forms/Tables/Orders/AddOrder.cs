@@ -21,5 +21,15 @@ namespace electronic_register
         {
 
         }
+
+        private void addPlacementbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delPlacementButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

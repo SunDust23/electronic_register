@@ -25,6 +25,8 @@ namespace electronic_register
         public void updateTable()
         {
             fillForms.FillTable(Scripts.Select.SelectOrders, dataGridView1);
+            fillForms.FillListBox(Scripts.Select.SelectOrders, checkedListBox1);
+            fillForms.FillListView(Scripts.Select.SelectOrders, listView1);
         }
 
         private void button1_Click(object sender, EventArgs e)
