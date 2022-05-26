@@ -42,12 +42,12 @@ namespace electronic_register
 
         private void button2_Click(object sender, EventArgs e)
         {
-            updatedId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            AddOrder = new AddOrder(updatedId)
-            {
-                Tag = this
-            };
-            AddOrder.Show();
+            //updatedId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            //AddOrder = new AddOrder(updatedId)
+            //{
+            //    Tag = this
+            //};
+            //AddOrder.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox_action = new System.Windows.Forms.ComboBox();
             this.dateTimePicker_validity = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_date = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,7 +45,8 @@
             this.addPlacementbutton = new System.Windows.Forms.Button();
             this.delPlacementButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox_action = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +70,14 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Приказ";
+            // 
+            // comboBox_action
+            // 
+            this.comboBox_action.FormattingEnabled = true;
+            this.comboBox_action.Location = new System.Drawing.Point(166, 83);
+            this.comboBox_action.Name = "comboBox_action";
+            this.comboBox_action.Size = new System.Drawing.Size(162, 24);
+            this.comboBox_action.TabIndex = 13;
             // 
             // dateTimePicker_validity
             // 
@@ -157,7 +167,7 @@
             // 
             this.listBox_addPlacement.FormattingEnabled = true;
             this.listBox_addPlacement.ItemHeight = 16;
-            this.listBox_addPlacement.Location = new System.Drawing.Point(16, 35);
+            this.listBox_addPlacement.Location = new System.Drawing.Point(17, 53);
             this.listBox_addPlacement.Name = "listBox_addPlacement";
             this.listBox_addPlacement.Size = new System.Drawing.Size(135, 212);
             this.listBox_addPlacement.TabIndex = 4;
@@ -166,14 +176,14 @@
             // 
             this.listBox_AllPlacements.FormattingEnabled = true;
             this.listBox_AllPlacements.ItemHeight = 16;
-            this.listBox_AllPlacements.Location = new System.Drawing.Point(165, 35);
+            this.listBox_AllPlacements.Location = new System.Drawing.Point(166, 53);
             this.listBox_AllPlacements.Name = "listBox_AllPlacements";
             this.listBox_AllPlacements.Size = new System.Drawing.Size(135, 212);
             this.listBox_AllPlacements.TabIndex = 5;
             // 
             // addPlacementbutton
             // 
-            this.addPlacementbutton.Location = new System.Drawing.Point(124, 264);
+            this.addPlacementbutton.Location = new System.Drawing.Point(125, 276);
             this.addPlacementbutton.Name = "addPlacementbutton";
             this.addPlacementbutton.Size = new System.Drawing.Size(27, 23);
             this.addPlacementbutton.TabIndex = 6;
@@ -183,7 +193,7 @@
             // 
             // delPlacementButton
             // 
-            this.delPlacementButton.Location = new System.Drawing.Point(165, 264);
+            this.delPlacementButton.Location = new System.Drawing.Point(166, 276);
             this.delPlacementButton.Name = "delPlacementButton";
             this.delPlacementButton.Size = new System.Drawing.Size(27, 23);
             this.delPlacementButton.TabIndex = 7;
@@ -193,6 +203,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.listBox_addPlacement);
             this.groupBox2.Controls.Add(this.delPlacementButton);
             this.groupBox2.Controls.Add(this.addPlacementbutton);
@@ -204,13 +216,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Помещения";
             // 
-            // comboBox_action
+            // label6
             // 
-            this.comboBox_action.FormattingEnabled = true;
-            this.comboBox_action.Location = new System.Drawing.Point(166, 83);
-            this.comboBox_action.Name = "comboBox_action";
-            this.comboBox_action.Size = new System.Drawing.Size(162, 24);
-            this.comboBox_action.TabIndex = 13;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Выбранные ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(163, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 16);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Все помещения";
             // 
             // AddOrder
             // 
@@ -224,6 +246,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +270,7 @@
         private System.Windows.Forms.Button delPlacementButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox_action;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
