@@ -45,6 +45,11 @@ namespace electronic_register
 
             public static string UpdatePlacement =
                 "UPDATE Placements SET divisionId = @divisionId, typeId = @typeId, roomID = @roomID, square = @square WHERE id = @id";
+
+            public static string UpdatePlacementByOrder =
+               "UPDATE Placements SET divisionId = @divisionId WHERE id = @id";
+
+
             public static string UpdateOrder =
                 "UPDATE Orders SET orderNum = @orderNum, typeId = @typeId, date = @date, validity = @validity, divisionId = @divisionId WHERE id = @id";
             public static string UpdateActionType =
@@ -154,6 +159,11 @@ namespace electronic_register
                 "SELECT * FROM placementsinorder " +
                 "INNER JOIN orders ON placementsinorder.orderId = orders.id " +
                 "INNER JOIN placements ON placementsinorder.placementId = placements.id";
+
+
+            public static string SelectDivisionsSquare =
+                "SELECT distinct name, count(placements.id) as placementsCount, sum(placements.square) as squareSum " +
+                "FROM divisions inner join placements on divisions.id = placements.divisionId group by name;";
         }
     }
 }

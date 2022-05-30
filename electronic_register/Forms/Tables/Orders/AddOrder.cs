@@ -81,8 +81,8 @@ namespace electronic_register
             DateTime validity = dateTimePicker_validity.Value;
             int divisionId = Convert.ToInt32(comboBox_division.SelectedValue);
 
-            string query_order = Scripts.Insert.InsertOrder;
-            string query_placements = Scripts.Insert.InsertPlacementInOrder;
+            //string query_order = Scripts.Insert.InsertOrder;
+            //string query_placements = Scripts.Insert.InsertPlacementInOrder;
 
             //if (_isEdit)
             //{
@@ -95,7 +95,7 @@ namespace electronic_register
             //query_placements = Scripts.Insert.InsertPlacementInOrder;
             //}
 
-            MySqlCommand command = new MySqlCommand(query_order, conn);
+            MySqlCommand command = new MySqlCommand(Scripts.Insert.InsertOrder, conn);
 
 
             //command.Parameters.AddWithValue("@id", _editId);
@@ -114,17 +114,24 @@ namespace electronic_register
             mySql_dataAdapter.Fill(table);
 
             int orderId;
+            int divId;
             foreach (DataRow row in table.Rows)
             {
-                orderId = Convert.ToInt32(row[0]);;
+                orderId = Convert.ToInt32(row[0]);
+                divId = Convert.ToInt32(row[5]);
 
                 foreach (Placement placement in _AddedPlacements)
                 {
                     int pId = placement.Id;
-                    MySqlCommand comm = new MySqlCommand(query_placements, conn);
-                    comm.Parameters.AddWithValue("@orderId", orderId);
-                    comm.Parameters.AddWithValue("@placementId", pId);
-                    comm.ExecuteNonQuery();
+                    MySqlCommand command2 = new MySqlCommand(Scripts.Insert.InsertPlacementInOrder, conn);
+                    command2.Parameters.AddWithValue("@orderId", orderId);
+                    command2.Parameters.AddWithValue("@placementId", pId);
+                    command2.ExecuteNonQuery();
+
+                    MySqlCommand command3 = new MySqlCommand(Scripts.Update.UpdatePlacementByOrder, conn);
+                    command3.Parameters.AddWithValue("@divisionId", divId);
+                    command3.Parameters.AddWithValue("@id", pId);
+                    command3.ExecuteNonQuery();
                 }
             }
 

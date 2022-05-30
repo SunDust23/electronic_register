@@ -58,18 +58,17 @@
             this.tabControl1.Location = new System.Drawing.Point(5, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1007, 458);
+            this.tabControl1.Size = new System.Drawing.Size(788, 447);
             this.tabControl1.TabIndex = 1;
             // 
             // tablePage
             // 
             this.tablePage.BackColor = System.Drawing.SystemColors.Control;
-            this.tablePage.Controls.Add(this.groupBox1);
             this.tablePage.Controls.Add(this.dataGridView1);
             this.tablePage.Location = new System.Drawing.Point(4, 25);
             this.tablePage.Name = "tablePage";
             this.tablePage.Padding = new System.Windows.Forms.Padding(3);
-            this.tablePage.Size = new System.Drawing.Size(999, 429);
+            this.tablePage.Size = new System.Drawing.Size(780, 418);
             this.tablePage.TabIndex = 0;
             this.tablePage.Text = "Таблица";
             // 
@@ -80,7 +79,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(800, 6);
+            this.groupBox1.Location = new System.Drawing.Point(813, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(193, 405);
             this.groupBox1.TabIndex = 5;
@@ -148,7 +147,7 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 405);
+            this.dataGridView1.Size = new System.Drawing.Size(771, 405);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -159,7 +158,7 @@
             this.hierarchyPage.Location = new System.Drawing.Point(4, 25);
             this.hierarchyPage.Name = "hierarchyPage";
             this.hierarchyPage.Padding = new System.Windows.Forms.Padding(3);
-            this.hierarchyPage.Size = new System.Drawing.Size(999, 429);
+            this.hierarchyPage.Size = new System.Drawing.Size(780, 418);
             this.hierarchyPage.TabIndex = 1;
             this.hierarchyPage.Text = "Уровни";
             // 
@@ -183,15 +182,15 @@
             this.treePage.Location = new System.Drawing.Point(4, 25);
             this.treePage.Name = "treePage";
             this.treePage.Padding = new System.Windows.Forms.Padding(3);
-            this.treePage.Size = new System.Drawing.Size(999, 429);
+            this.treePage.Size = new System.Drawing.Size(780, 418);
             this.treePage.TabIndex = 2;
             this.treePage.Text = "Дерево";
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(113, 14);
+            this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(772, 400);
+            this.treeView1.Size = new System.Drawing.Size(772, 408);
             this.treeView1.TabIndex = 1;
             // 
             // Divisions
@@ -199,6 +198,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 473);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Divisions";
             this.Text = "Подразделения";

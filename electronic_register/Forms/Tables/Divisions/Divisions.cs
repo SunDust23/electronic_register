@@ -74,10 +74,9 @@ namespace electronic_register
                 if(dr["divisionId"].ToString() == parentId.ToString())
                 {
                     TreeNode newNode = new TreeNode(dr["name"].ToString());
-                    parentId = Convert.ToInt32(dr["id"]);
+                    int newParentId = Convert.ToInt32(dr["id"]);
+                    createTreeNode(newNode, dtTree, newParentId);
                     treeNode.Nodes.Add(newNode);
-                    createTreeNode(newNode, dtTree, parentId);
-                   
                 }
                 
             }

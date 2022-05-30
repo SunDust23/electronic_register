@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tablePage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -44,13 +43,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tablePage.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SquarePage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -159,7 +158,7 @@
             this.SquarePage.Controls.Add(this.label2);
             this.SquarePage.Controls.Add(this.listBox1);
             this.SquarePage.Controls.Add(this.dateTimePicker1);
-            this.SquarePage.Controls.Add(this.chart1);
+            this.SquarePage.Controls.Add(this.chart);
             this.SquarePage.Location = new System.Drawing.Point(4, 25);
             this.SquarePage.Name = "SquarePage";
             this.SquarePage.Padding = new System.Windows.Forms.Padding(3);
@@ -170,7 +169,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(666, 41);
+            this.label2.Location = new System.Drawing.Point(740, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 3;
@@ -180,33 +179,31 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(666, 104);
+            this.listBox1.Location = new System.Drawing.Point(740, 104);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(250, 308);
             this.listBox1.TabIndex = 2;
+            this.listBox1.Visible = false;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(666, 63);
+            this.dateTimePicker1.Location = new System.Drawing.Point(740, 63);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // chart1
+            // chart
             // 
             chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(105, 21);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(433, 391);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chart.Legends.Add(legend2);
+            this.chart.Location = new System.Drawing.Point(22, 21);
+            this.chart.Name = "chart";
+            this.chart.Size = new System.Drawing.Size(702, 391);
+            this.chart.TabIndex = 0;
+            this.chart.Text = "chart";
             // 
             // Placements
             // 
@@ -224,7 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.SquarePage.ResumeLayout(false);
             this.SquarePage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,7 +239,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage SquarePage;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
     }
