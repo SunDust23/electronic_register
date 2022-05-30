@@ -20,6 +20,8 @@ namespace electronic_register
             InitializeComponent();
             updateTables();
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
         }
 
         public void updateTables()

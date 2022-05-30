@@ -39,17 +39,27 @@ namespace electronic_register
             mySql_dataAdapter.Fill(table);
 
             string orderNum, orderBody;
-            
+
             foreach (DataRow row in table.Rows)
             {
 
                 orderNum = "Приказ №" + row[1].ToString() + ": ";
-                orderBody = orderNum + row[4].ToString()
-                    + " " + row[5].ToString() + " помещения: "
-                    + row[6].ToString(); 
+                if (row[4].ToString() == "Закрепить")
+                {
+                    orderBody = orderNum + row[4].ToString()
+                        + " за " + row[6].ToString() + " помещения: "
+                        + row[8].ToString();
+                }
+                else
+                {
+                    orderBody = orderNum + row[4].ToString()
+                        + " " + row[7].ToString() + " помещения: "
+                        + row[8].ToString();
+                }
+
 
                 listView.Items.Add(orderBody);
-                
+
             }
 
             conn.Close();
@@ -74,10 +84,10 @@ namespace electronic_register
                 validation = System.DateTime.Parse(date).ToShortDateString();
 
                 order = "Приказ №" + row[1].ToString() + ": от " + date
-                    + ", срок действия: до " + validation; 
-                    //+ " " + row[4].ToString() 
-                    //+ " " + row[5].ToString() + " следующие помещения: " 
-                    //+ row[6].ToString();
+                    + ", срок действия: " + validation;
+                //+ " " + row[4].ToString() 
+                //+ " " + row[5].ToString() + " следующие помещения: " 
+                //+ row[6].ToString();
                 listBox.Items.Add(order);
             }
 

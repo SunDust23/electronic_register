@@ -35,7 +35,6 @@ namespace electronic_register
             fillForms.FillTable(Scripts.Select.SelectDivision, dataGridView1);
             fillForms.FillTable(Scripts.Select.SelectDivisionHierarchy, dataGridView_levels);
             fillHierarchy(Scripts.Select.SelectDivisions, treeView1);
-            //((Main)this.Tag).getChanges();
         }
 
         private void fillHierarchy(string script, System.Windows.Forms.TreeView treeView)
@@ -50,25 +49,16 @@ namespace electronic_register
             treeView.BeginUpdate();
             treeView.Nodes.Clear();
 
-            //int parentId = 1;
-          //  CreateTreeView(treeView, 0, dtTree);
-
             foreach (DataRow dr in dtTree.Rows)
             {
-                //TreeNode childNode = new TreeNode(dr["name"].ToString());
-
-                //treeView.SelectedNode.Nodes.Add(childNode);
-                //if (Convert.ToInt32(dr["divisionId"]) == parentId)
-                //{
-                String key = dr["id"].ToString();
-                String text = dr["name"].ToString();
-
-                treeView.Nodes.Add(key, text);
-
-                   // parentId = Convert.ToInt32(dr["id"]);
-                //if (Convert.ToInt32(dr["divisionId"]) == Convert.ToInt32(dr["id"]))
-                //   // CreateTreeView(treeView, Convert.ToInt32(dr["id"]), dtTree);
-                //}
+                if (dr["divisionId"].ToString() == "")
+                {
+                    TreeNode newNode = new TreeNode(dr["name"].ToString());
+                    int parentId = Convert.ToInt32(dr["id"]);
+                    createTreeNode(newNode, dtTree, parentId);
+                    treeView.Nodes.Add(newNode);
+                }
+                
             }
             treeView.Nodes[0].Expand();
             treeView.Select();
@@ -76,6 +66,27 @@ namespace electronic_register
 
             conn.Close();
         }
+
+        private void createTreeNode(TreeNode treeNode, DataTable dtTree, int parentId)
+        {
+            foreach (DataRow dr in dtTree.Rows)
+            {
+                if(dr["divisionId"].ToString() == parentId.ToString())
+                {
+                    TreeNode newNode = new TreeNode(dr["name"].ToString());
+                    parentId = Convert.ToInt32(dr["id"]);
+                    treeNode.Nodes.Add(newNode);
+                    createTreeNode(newNode, dtTree, parentId);
+                   
+                }
+                
+            }
+
+        }
+
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
