@@ -30,30 +30,25 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tablePage = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.treePage = new System.Windows.Forms.TabPage();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_selectedId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hierarchyPage = new System.Windows.Forms.TabPage();
-            this.dataGridView_levels = new System.Windows.Forms.DataGridView();
-            this.treePage = new System.Windows.Forms.TabPage();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabControl1.SuspendLayout();
             this.tablePage.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.hierarchyPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_levels)).BeginInit();
             this.treePage.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tablePage);
-            this.tabControl1.Controls.Add(this.hierarchyPage);
             this.tabControl1.Controls.Add(this.treePage);
             this.tabControl1.Location = new System.Drawing.Point(5, 3);
             this.tabControl1.Name = "tabControl1";
@@ -71,6 +66,42 @@
             this.tablePage.Size = new System.Drawing.Size(780, 418);
             this.tablePage.TabIndex = 0;
             this.tablePage.Text = "Таблица";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(771, 405);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // treePage
+            // 
+            this.treePage.BackColor = System.Drawing.SystemColors.Control;
+            this.treePage.Controls.Add(this.treeView1);
+            this.treePage.Location = new System.Drawing.Point(4, 25);
+            this.treePage.Name = "treePage";
+            this.treePage.Padding = new System.Windows.Forms.Padding(3);
+            this.treePage.Size = new System.Drawing.Size(780, 418);
+            this.treePage.TabIndex = 2;
+            this.treePage.Text = "Дерево";
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(3, 3);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(772, 408);
+            this.treeView1.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -133,66 +164,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(771, 405);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // hierarchyPage
-            // 
-            this.hierarchyPage.BackColor = System.Drawing.SystemColors.Control;
-            this.hierarchyPage.Controls.Add(this.dataGridView_levels);
-            this.hierarchyPage.Location = new System.Drawing.Point(4, 25);
-            this.hierarchyPage.Name = "hierarchyPage";
-            this.hierarchyPage.Padding = new System.Windows.Forms.Padding(3);
-            this.hierarchyPage.Size = new System.Drawing.Size(780, 418);
-            this.hierarchyPage.TabIndex = 1;
-            this.hierarchyPage.Text = "Уровни";
-            // 
-            // dataGridView_levels
-            // 
-            this.dataGridView_levels.AllowUserToAddRows = false;
-            this.dataGridView_levels.AllowUserToDeleteRows = false;
-            this.dataGridView_levels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_levels.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView_levels.Name = "dataGridView_levels";
-            this.dataGridView_levels.RowHeadersWidth = 51;
-            this.dataGridView_levels.RowTemplate.Height = 24;
-            this.dataGridView_levels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_levels.Size = new System.Drawing.Size(775, 405);
-            this.dataGridView_levels.TabIndex = 1;
-            // 
-            // treePage
-            // 
-            this.treePage.BackColor = System.Drawing.SystemColors.Control;
-            this.treePage.Controls.Add(this.treeView1);
-            this.treePage.Location = new System.Drawing.Point(4, 25);
-            this.treePage.Name = "treePage";
-            this.treePage.Padding = new System.Windows.Forms.Padding(3);
-            this.treePage.Size = new System.Drawing.Size(780, 418);
-            this.treePage.TabIndex = 2;
-            this.treePage.Text = "Дерево";
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(3, 3);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(772, 408);
-            this.treeView1.TabIndex = 1;
-            // 
             // Divisions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -204,12 +175,10 @@
             this.Text = "Подразделения";
             this.tabControl1.ResumeLayout(false);
             this.tablePage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.treePage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.hierarchyPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_levels)).EndInit();
-            this.treePage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -218,14 +187,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tablePage;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage hierarchyPage;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox_selectedId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView_levels;
         private System.Windows.Forms.TabPage treePage;
         private System.Windows.Forms.TreeView treeView1;
     }

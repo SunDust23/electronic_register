@@ -33,7 +33,6 @@ namespace electronic_register
         public void updateTables()
         {
             fillForms.FillTable(Scripts.Select.SelectDivision, dataGridView1);
-            fillForms.FillTable(Scripts.Select.SelectDivisionHierarchy, dataGridView_levels);
             fillHierarchy(Scripts.Select.SelectDivisions, treeView1);
         }
 
