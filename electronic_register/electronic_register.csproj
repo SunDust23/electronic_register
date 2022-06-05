@@ -91,6 +91,7 @@
       <DependentUpon>Divisions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tables\Orders\Placement.cs" />
+    <Compile Include="Forms\Tables\Placements\PlacementsByDate.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

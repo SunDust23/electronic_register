@@ -18,7 +18,7 @@ namespace electronic_register
                "INSERT INTO Divisions (name, shortName, genetiveCase, dativeCase, companyId) VALUES (@name, @shortName, @genetiveCase, @dativeCase, @companyId)";
 
             public static string InsertPlacement =
-                "INSERT INTO Placements (divisionId, typeId, roomID, square) VALUES (@divisionId, @typeId, @roomID, @square)";
+                "INSERT INTO Placements (divisionId, typeId, roomID, square, firstDivisionId) VALUES (@divisionId, @typeId, @roomID, @square, @divisionId)";
             public static string InsertOrder =
                 "INSERT INTO Orders (orderNum, typeId, date, validity, divisionId) VALUES (@orderNum, @typeId, @date, @validity, @divisionId)";
             public static string InsertActionType =
@@ -149,10 +149,12 @@ namespace electronic_register
                 "SELECT orders.id, orderNum AS Номер, date AS Дата_подписания, validity AS Срок_действия, " +
                 "actiontype.name AS Действие, divisions.shortName AS Подразделение, " +
                 "divisions.genetiveCase AS Подразделение, divisions.dativeCase AS Подразделение, " +
-                "GROUP_CONCAT(placementId SEPARATOR ', ') AS Помещения " +
+                "GROUP_CONCAT(roomNum SEPARATOR ', ') AS Помещения " +
                 "FROM orders INNER JOIN actionType ON orders.typeId = actionType.id " +
                 "INNER JOIN divisions ON orders.divisionId = divisions.id " +
                 "JOIN placementsinorder ON placementsinorder.orderId = orders.id " +
+                "inner join placements on placementsinorder.placementId = placements.id " +
+                "inner join room on placements.roomId = room.id " +
                 "GROUP BY orderNum;";
 
             public static string SelectPlacementsInOrder =
@@ -164,6 +166,13 @@ namespace electronic_register
             public static string SelectDivisionsSquare =
                 "SELECT distinct name, count(placements.id) as placementsCount, sum(placements.square) as squareSum " +
                 "FROM divisions inner join placements on divisions.id = placements.divisionId group by name;";
+
+            public static string SelectFirstPlacementsDivision =
+                "SELECT distinct name as Подразделение, GROUP_CONCAT(roomNum SEPARATOR ', ') " +
+                "as Помещения, sum(square) as Площадь  from placements  " +
+                "join divisions on  divisions.id = placements.firstdivisionId " +
+                "inner join room on placements.roomId = room.id GROUP BY name";
+
         }
     }
 }

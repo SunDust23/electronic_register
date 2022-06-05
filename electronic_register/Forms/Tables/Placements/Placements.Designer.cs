@@ -44,18 +44,24 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.listPage = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tablePage.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SquarePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.listPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tablePage);
             this.tabControl1.Controls.Add(this.SquarePage);
+            this.tabControl1.Controls.Add(this.listPage);
             this.tabControl1.Location = new System.Drawing.Point(2, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -207,6 +213,40 @@
             this.chart.TabIndex = 0;
             this.chart.Text = "chart";
             // 
+            // listPage
+            // 
+            this.listPage.BackColor = System.Drawing.SystemColors.Control;
+            this.listPage.Controls.Add(this.dataGridView2);
+            this.listPage.Controls.Add(this.dateTimePicker2);
+            this.listPage.Location = new System.Drawing.Point(4, 25);
+            this.listPage.Name = "listPage";
+            this.listPage.Padding = new System.Windows.Forms.Padding(3);
+            this.listPage.Size = new System.Drawing.Size(999, 429);
+            this.listPage.TabIndex = 2;
+            this.listPage.Text = "Выборка по датам";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(662, 420);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(770, 20);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 0;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
             // Placements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,6 +264,8 @@
             this.SquarePage.ResumeLayout(false);
             this.SquarePage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.listPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,5 +286,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TabPage listPage;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
