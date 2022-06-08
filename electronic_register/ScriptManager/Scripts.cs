@@ -112,16 +112,16 @@ namespace electronic_register
             public static string SelectRoom =
                "SELECT placements.id, roomNum FROM placements inner join room on roomid = room.id";
 
-            public static string SelectDivisionHierarchy =
-                "SELECT t1.name AS lev1, t2.name as lev2, t3.name as lev3, t4.name as lev4 " +
-                "FROM(divisions AS t1 " +
-                "LEFT JOIN divisions AS t2 ON t2.divisionId = t1.id " +
-                "LEFT JOIN divisions AS t3 ON t3.divisionId = t2.id " +
-                "LEFT JOIN divisions AS t4 ON t4.divisionId = t3.id) " +
-                "where t1.divisionId is null;";
+            //public static string SelectDivisionHierarchy =
+            //    "SELECT t1.name AS lev1, t2.name as lev2, t3.name as lev3, t4.name as lev4 " +
+            //    "FROM(divisions AS t1 " +
+            //    "LEFT JOIN divisions AS t2 ON t2.divisionId = t1.id " +
+            //    "LEFT JOIN divisions AS t3 ON t3.divisionId = t2.id " +
+            //    "LEFT JOIN divisions AS t4 ON t4.divisionId = t3.id) " +
+            //    "where t1.divisionId is null;";
 
             public const string SelectDivision =
-                "SELECT t1.id as Код, t1.name as Название, t1.shortName as Краткое, t1.genetiveCase as Родительный," +
+                "SELECT t1.id as Код, t1.name as Название, t1.shortName as Краткое, t1.genetiveCase as Творительный," +
                 " t1.dativeCase as Дательный, t2.name as Подразделение, company.shortName as Предприятие " +
                 "FROM divisions as t1 inner join company on t1.companyId = company.id " +
                 "LEFT JOIN divisions AS t2 ON t1.divisionId = t2.id";

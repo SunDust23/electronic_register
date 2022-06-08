@@ -25,12 +25,14 @@ namespace electronic_register
             updateTables();
             dataGridView1.Columns[0].Visible = false;
 
-            chart.ChartAreas[0].Axes[0].Title = "Подразделения";
+            chart.ChartAreas[0].AxisX.Title = "Дата";
 
-            chart.ChartAreas[0].Axes[1].Title = "Площадь";
+            chart.ChartAreas[0].AxisY.Title = "Площадь";
+            conn.Open();
+
             drawChart();
-            getPlacementsByDate();
 
+            getPlacementsByDate(dateTimePicker2.Value);
         }
 
         public void updateTables()
@@ -69,26 +71,42 @@ namespace electronic_register
 
         private void drawChart()
         {
-            conn.Open();
+
+            DateTime firstDate = dateTimePicker_first.Value;
+            DateTime lastDate = dateTimePicker_last.Value;
+
+
+            //conn.Open();
             MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(Scripts.Select.SelectDivisionsSquare, conn);
             DataTable table = new DataTable();
             mySql_dataAdapter.Fill(table);
+
+
+
             int ChartId = 0;
             foreach (DataRow row in table.Rows)
             {
                 chart.Series.Add(row["name"].ToString());
-                //chart.Series[ChartId].XValueType = ChartValueType.Date;
-                //chart.ChartAreas[0].AxisX.LabelStyle.Format = "yyyy";
-                ////chart.ChartAreas[0].AxisX.Interval = 0.1;
-                //chart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Years;
-                ////chart.ChartAreas[0].AxisX.IntervalOffset = 1;
+
+                chart.Series[ChartId].XValueType = ChartValueType.Date;
+                chart.ChartAreas[0].AxisX.LabelStyle.Format = "yyyy";
+                chart.ChartAreas[0].AxisX.Interval = 1;
+                chart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Years;
+                chart.ChartAreas[0].AxisX.IntervalOffset = 1;
 
                 //// dateTimePicker1.Value.ToShortDateString()
-                chart.Series[ChartId].Points.Add(Convert.ToInt32(row["squareSum"]));
+                ///
+                for (DateTime date = firstDate; date <= lastDate; date = date.AddYears(1))
+                {
+                    getPlacementsByDate(date);
+                   // chart.Series[ChartId].Points.Add(Convert.ToInt32(row["squareSum"]), date.Year);
+                    chart.Series[ChartId].Points.AddXY(date, Convert.ToInt32(dataGridView2.Rows[ChartId].Cells["Square"].Value));
+                }
+               
                 ChartId++;
             }
 
-            conn.Close();
+            //conn.Close();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -100,15 +118,15 @@ namespace electronic_register
 
 
 
-        private void getPlacementsByDate()
+        private void getPlacementsByDate(DateTime selectedDate)
         {
 
             List<PlacementsByDate> placementsByDate = new List<PlacementsByDate>();
             List<PlacementsByDate> changesFromOrders = new List<PlacementsByDate>();
 
-            DateTime selectedDate = dateTimePicker2.Value;
+            //DateTime selectedDate = dateTimePicker2.Value;
 
-            conn.Open();
+
             MySqlDataAdapter mySql_dataAdapter = new MySqlDataAdapter(Scripts.Select.SelectFirstPlacementsDivision, conn);
             DataTable table = new DataTable();
             mySql_dataAdapter.Fill(table);
@@ -146,15 +164,6 @@ namespace electronic_register
                 {
                     string roomStr = placementsByDate[i].RoomNum.ToString();
 
-                    //if (roomStr.Contains(newRoom))
-                    //{
-                    //    var roomArray = placementsByDate[i].RoomNum.Split(',').Select(x => x.Trim()).ToArray();
-
-                    //    var str = string.Join(", ", roomArray.Where(x => x != newRoom).ToList());
-                    //    placementsByDate[i].Square -= cfo.Square;
-
-                    //    placementsByDate[i].RoomNum = str;
-                    //}
                     foreach (string room in newRoom)
                     {
                         int roomSquare = 0;
@@ -171,7 +180,7 @@ namespace electronic_register
                         {
                             var roomArray = placementsByDate[i].RoomNum.Split(',').Select(x => x.Trim()).ToArray();
 
-                            var str = string.Join(", ", roomArray.Where(x => x != room).ToList());
+                            var str = string.Join(", ", roomArray.Where(x => x != room).ToArray());
 
 
                             placementsByDate[i].Square -= roomSquare;
@@ -194,7 +203,6 @@ namespace electronic_register
 
             dataGridView2.Columns[2].Visible = false;
 
-            conn.Close();
         }
 
 
@@ -202,7 +210,8 @@ namespace electronic_register
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            getPlacementsByDate();
+           // DateTime selectedDate = dateTimePicker2.Value;
+            getPlacementsByDate(dateTimePicker2.Value);
         }
     }
 }

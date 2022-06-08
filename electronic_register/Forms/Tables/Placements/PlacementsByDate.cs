@@ -14,7 +14,6 @@ namespace electronic_register
         private DateTime date;
         private double square;
 
-
         public string Division { get => division; set => division = value; }
         public string RoomNum { get => roomNum; set => roomNum = value; }
         public DateTime Date { get => date; set => date = value; }
