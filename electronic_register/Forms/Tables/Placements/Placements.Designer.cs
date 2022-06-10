@@ -28,27 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tablePage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox_selectedId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.SquarePage = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker_last = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker_first = new System.Windows.Forms.DateTimePicker();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.listPage = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker_last = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tablePage.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,8 +82,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox_selectedId);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -95,23 +91,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление таблицей";
-            // 
-            // textBox_selectedId
-            // 
-            this.textBox_selectedId.Location = new System.Drawing.Point(20, 370);
-            this.textBox_selectedId.Name = "textBox_selectedId";
-            this.textBox_selectedId.ReadOnly = true;
-            this.textBox_selectedId.Size = new System.Drawing.Size(121, 22);
-            this.textBox_selectedId.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 342);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Выбранная срока:";
             // 
             // button3
             // 
@@ -175,6 +154,22 @@
             this.SquarePage.TabIndex = 1;
             this.SquarePage.Text = "Площади помещений";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(740, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Дата конца:";
+            // 
+            // dateTimePicker_last
+            // 
+            this.dateTimePicker_last.Location = new System.Drawing.Point(743, 127);
+            this.dateTimePicker_last.Name = "dateTimePicker_last";
+            this.dateTimePicker_last.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker_last.TabIndex = 4;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -194,10 +189,10 @@
             // 
             // chart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(22, 21);
             this.chart.Name = "chart";
             this.chart.Size = new System.Drawing.Size(702, 391);
@@ -216,6 +211,15 @@
             this.listPage.Size = new System.Drawing.Size(999, 429);
             this.listPage.TabIndex = 2;
             this.listPage.Text = "Выборка по датам";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(741, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Дата:";
             // 
             // dataGridView2
             // 
@@ -239,31 +243,6 @@
             this.dateTimePicker2.TabIndex = 0;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(740, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Дата конца:";
-            // 
-            // dateTimePicker_last
-            // 
-            this.dateTimePicker_last.Location = new System.Drawing.Point(743, 127);
-            this.dateTimePicker_last.Name = "dateTimePicker_last";
-            this.dateTimePicker_last.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker_last.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(741, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Дата:";
-            // 
             // Placements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,7 +255,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tablePage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.SquarePage.ResumeLayout(false);
             this.SquarePage.PerformLayout();
@@ -293,8 +271,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tablePage;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox_selectedId;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

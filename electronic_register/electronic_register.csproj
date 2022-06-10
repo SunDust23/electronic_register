@@ -58,6 +58,12 @@
     <Compile Include="Forms\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth.Designer.cs">
+      <DependentUpon>Auth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\References\AddRef.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth.resx">
+      <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\References\AddRef.resx">
       <DependentUpon>AddRef.cs</DependentUpon>

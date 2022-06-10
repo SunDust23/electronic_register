@@ -87,12 +87,12 @@ namespace electronic_register
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox_selectedRow.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+           
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox_selectedRow.Text = Convert.ToString(dataGridView2.CurrentRow.Cells[0].Value);
+            
         }
     }
 }

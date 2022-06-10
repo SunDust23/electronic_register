@@ -18,6 +18,9 @@ namespace electronic_register
         public AddPlacement PlacementsAdd;
         public StaticReferences StaticReferences;
 
+        public Auth Auth;
+
+
 
         public Main()
         {

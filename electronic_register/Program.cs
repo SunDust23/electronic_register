@@ -17,7 +17,7 @@ namespace electronic_register
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Auth());
         }
     }
 }

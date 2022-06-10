@@ -34,8 +34,6 @@
             this.ActionTypePage = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox_selectedRow = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -116,8 +114,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox_selectedRow);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -127,23 +123,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Управление справочниками";
-            // 
-            // textBox_selectedRow
-            // 
-            this.textBox_selectedRow.Location = new System.Drawing.Point(27, 296);
-            this.textBox_selectedRow.Name = "textBox_selectedRow";
-            this.textBox_selectedRow.ReadOnly = true;
-            this.textBox_selectedRow.Size = new System.Drawing.Size(121, 22);
-            this.textBox_selectedRow.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 268);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Выбранная срока:";
             // 
             // button3
             // 
@@ -191,7 +170,6 @@
             this.ActionTypePage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,7 +185,5 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage ActionTypePage;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox_selectedRow;
-        private System.Windows.Forms.Label label1;
     }
 }

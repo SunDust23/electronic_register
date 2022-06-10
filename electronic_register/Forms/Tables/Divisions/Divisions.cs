@@ -116,7 +116,7 @@ namespace electronic_register
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBox_selectedId.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+           
         }
 
         //protected void CreateTreeView(TreeNode treeNode, int parentID, DataTable mytab)

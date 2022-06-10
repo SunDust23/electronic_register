@@ -13,9 +13,7 @@ namespace electronic_register
         private int _editId;
         private bool _isEdit = false;
 
-        /// <summary>
-        /// Добавление
-        /// </summary>
+
         public AddDivision()
         {
             InitializeComponent();
@@ -23,13 +21,8 @@ namespace electronic_register
             fillForms.FillComboBox(Scripts.Select.SelectDivisions, "name", "id", comboBox_division);
             conn.Open();
             comboBox_division.SelectedItem = null;
-            //fillWinFormsList(row);
         }
 
-        /// <summary>
-        /// Редактирование
-        /// </summary>
-        /// <param name="id">Ид редактируемого</param>
         public AddDivision(int id) 
         {
             InitializeComponent();
@@ -46,9 +39,6 @@ namespace electronic_register
             InitEditInfo();
         }
 
-        /// <summary>
-        /// Забить данными поля при редачестве
-        /// </summary>
         private void InitEditInfo()
         {
             string query = $"Select * From Divisions Where id = {_editId}";
@@ -71,19 +61,6 @@ namespace electronic_register
 
             comboBox_division.Items.Remove(int.Parse(divisionData["id"].ToString()));
         }
-
-
-        //private void Save()
-        //{
-        //    if (!_isEdit)
-        //    {
-
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //}
 
         private string ChooseQuery()
         {

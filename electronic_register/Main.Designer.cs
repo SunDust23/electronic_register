@@ -171,16 +171,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 339);
+            this.label6.Location = new System.Drawing.Point(6, 339);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(195, 16);
+            this.label6.Size = new System.Drawing.Size(151, 16);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Общая занимаемая площадь:";
+            this.label6.Text = "Занимаемая площадь:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 312);
+            this.label5.Location = new System.Drawing.Point(6, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 16);
             this.label5.TabIndex = 7;
@@ -198,7 +198,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 285);
+            this.label2.Location = new System.Drawing.Point(6, 285);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 16);
             this.label2.TabIndex = 5;
